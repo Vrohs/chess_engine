@@ -1,5 +1,12 @@
 const socket = io();
 
+socket.emit('response')
+
+socket.on('response rec.', ()=>{
+
+    console.log('f. res. recd.')
+})
+
 // // Unicode characters for chess pieces
 // const pieces = {
 //     white: {

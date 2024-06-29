@@ -28,6 +28,16 @@ app.get('/', (req,res)=>{
 io.on('connection', (uniqueSocket)=>{
 
     console.log('connected');
+
+    uniqueSocket.on('response', ()=>{
+
+        io.emit('response rec.')
+    });
+
+    uniqueSocket.on('disconnect', ()=>{
+
+        console.log('lost connection to the server')
+    })
 })
 
 
