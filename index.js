@@ -13,6 +13,7 @@ const chess = new Chess();
 const players = {};
 let currPlayer = 'W';
 
+
 app.set('view engine', 'ejs');
 app.use(express.static('.'));
 
@@ -22,10 +23,21 @@ app.get('/', (req,res)=>{
     res.render('playground')
 })
 
+
+
+io.on('connection', (uniqueSocket)=>{
+
+    console.log('connected');
+})
+
+
+
 server.listen(PORT, (err)=>{
 
     if(err){
+
         console.error(err);
     } else {
-    console.log(`server active on http://localhost:${PORT}`)
+
+    console.log(`ilve on http://localhost:${PORT}`)
 }})
